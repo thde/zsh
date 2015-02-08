@@ -36,10 +36,6 @@ alias outgoingip='dig myip.opendns.com @resolver1.opendns.com +short' #fastest
 
 ## Functions ##
 hostfromdomain() {
-   for IP in $(dig a "$1" +short)
-   do
-        # host "$IP"
-          dig -x "$IP" +short
-   done
+  dig "$1" +short | xargs dig +short -x
 }
 ##
