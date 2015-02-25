@@ -38,4 +38,8 @@ alias outgoingip='dig myip.opendns.com @resolver1.opendns.com +short' #fastest
 hostfromdomain() {
   dig "$1" +short | xargs dig +short -x
 }
+
+create-crt() {
+    openssl req -new -x509 -nodes -days 3650 -subj "/C=CH/ST=Zurich/L=Bulach/CN=$1" -keyout "/etc/ssl/private/self/$1.key" -out "/etc/ssl/private/self/$1.crt"
+}
 ##
