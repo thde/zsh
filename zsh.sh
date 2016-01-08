@@ -62,7 +62,7 @@ extract () {
           *.tgz)       tar xvzf $1    ;;
           *.zip)       unzip $1       ;;
           *.Z)         uncompress $1  ;;
-          *.7z)        7z x $1        ;;
+          *.7z)        7za x $1        ;;
           *)           echo "don't know '$1'..." ;;
       esac
   else
