@@ -1,4 +1,13 @@
 ## Modified commands ##
+if grep --color "a" <<<"a" &>/dev/null; then
+    alias grep='grep --color=auto'
+fi
+if egrep --color "a" <<<"a" &>/dev/null; then
+    alias egrep='egrep --color=auto'
+fi
+if fgrep --color "a" <<<"a" &>/dev/null; then
+    alias fgrep='fgrep --color=auto'
+fi
 alias more='less'
 alias df='df -h'
 alias du='du -c -h'
