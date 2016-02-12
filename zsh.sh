@@ -35,6 +35,7 @@ alias header='curl -I'
 alias mountt='mount |column -t'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias lines='wc -l'
+alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 alias outgoingip='dig myip.opendns.com @resolver1.opendns.com +short' #fastest
 # alias outgoingip="wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 # alias outgoingip='curl ifconfig.me'
