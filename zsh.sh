@@ -47,7 +47,7 @@ hostfromdomain() {
 }
 
 create-crt() {
-    openssl req -new -x509 -nodes -days 3650 -subj "/C=CH/ST=Zurich/L=Bulach/CN=$1" -keyout "/etc/ssl/private/self/$1.key" -out "/etc/ssl/private/self/$1.crt"
+    openssl req -new -x509 -nodes -days 3650 -subj "/CN=$1" -keyout "/etc/ssl/private/self/$1.key" -out "/etc/ssl/private/self/$1.crt"
 }
 
 gccrun() {
