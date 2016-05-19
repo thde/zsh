@@ -42,15 +42,15 @@ alias outgoingip='dig myip.opendns.com @resolver1.opendns.com +short' #fastest
 ##
 
 ## Functions ##
-hostfromdomain() {
+hostfromdomain () {
   dig "$1" +short | xargs dig +short -x
 }
 
-create-crt() {
+create-crt () {
     openssl req -new -x509 -nodes -days 3650 -subj "/CN=$1" -keyout "/etc/ssl/private/self/$1.key" -out "/etc/ssl/private/self/$1.crt"
 }
 
-gccrun() {
+gccrun () {
   gcc "$1" -o ./gccrun
   ./gccrun
   rm -f ./gccrun
@@ -75,5 +75,9 @@ extract () {
   else
       echo "'$1' is not a valid file!"
   fi
+}
+
+weather () {
+    curl "http://wttr.in/${1}"
 }
 ##
