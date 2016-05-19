@@ -78,6 +78,6 @@ extract () {
 }
 
 weather () {
-    curl "http://wttr.in/${1}"
+    curl -s "http://wttr.in/${1}"
 }
 ##
