@@ -39,6 +39,7 @@ alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 alias outgoingip='dig myip.opendns.com @resolver1.opendns.com +short' #fastest
 # alias outgoingip="wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 # alias outgoingip='curl ifconfig.me'
+ rs='rsync -ahvP --stats'
 ##
 
 ## Functions ##
