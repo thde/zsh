@@ -20,6 +20,7 @@ alias wget='wget -c'
 
 ## New commands ##
 alias da='date "+%A, %B %d, %Y [%T]"'
+alias cc='cd && clear'
 alias hist='history | grep'         # requires an argument
 alias openports='ss --all --numeric --processes --ipv4 --ipv6'
 alias pgg='ps -Af | grep'           # requires an argument
