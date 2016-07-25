@@ -11,9 +11,8 @@ fi
 alias more='less'
 alias df='df -h'
 alias du='du -c -h'
-alias mkdir='mkdir -p -v'
+alias mkdir='mkdir -v'
 alias nano='nano -w'
-alias ping='ping -c 5'
 alias dmesg='dmesg -HL'
 alias wget='wget -c'
 ##
@@ -41,6 +40,21 @@ alias outgoingip='dig myip.opendns.com @resolver1.opendns.com +short' #fastest
 # alias outgoingip="wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 # alias outgoingip='curl ifconfig.me'
 alias rs='rsync -ahvP --stats'
+##
+
+## OS specific ##
+case "$(uname -s)" in
+   Darwin) # Mac OS X
+     alias upgrade-all='antigen update && brew update && brew upgrade && brew cleanup && yes | apm upgrade'
+     ;;
+   Linux)
+     ;;
+   CYGWIN*|MINGW32*|MSYS*) # Windows
+     ;;
+   # Add here more strings to compare (https://en.wikipedia.org/wiki/Uname#Examples)
+   *) # not listed 
+     ;;
+esac
 ##
 
 ## Functions ##
