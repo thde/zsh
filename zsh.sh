@@ -47,6 +47,7 @@ case "$(uname -s)" in
    Darwin) # Mac OS X
      alias upgrade-all='antigen update && brew update && brew upgrade && brew cleanup && yes | apm upgrade'
      alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+     alias flushdns='dscacheutil -flushcache && killall -HUP mDNSResponder'
      ;;
    Linux)
      ;;
