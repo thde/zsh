@@ -48,6 +48,7 @@ case "$(uname -s)" in
      alias upgrade-all='antigen update && brew update && brew upgrade && brew cleanup && yes | apm upgrade'
      alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
      alias flushdns='dscacheutil -flushcache && killall -HUP mDNSResponder'
+     alias ds-cleanup='find . -type f -name '*.DS_Store' -ls -delete'
      ;;
    Linux)
      ;;
