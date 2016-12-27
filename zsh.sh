@@ -39,7 +39,7 @@ case "$(uname -s)" in
      alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
      alias flushdns='dscacheutil -flushcache && killall -HUP mDNSResponder'
      alias ds-cleanup='find . -type f -name "*.DS_Store" -ls -delete'
-     alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
+     alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py' # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
      alias preview="open -a Preview $1"
      ;;
    Linux)
