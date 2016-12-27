@@ -35,10 +35,12 @@ alias rs='rsync -ahvP --stats'
 ## OS specific ##
 case "$(uname -s)" in
    Darwin) # Mac OS X
-     alias upgrade='brew update && brew upgrade && brew cleanup && brew cask cleanup && yes | apm upgrade'
+     alias upgrade='brew update && brew upgrade && brew cleanup && brew cask cleanup'
      alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
      alias flushdns='dscacheutil -flushcache && killall -HUP mDNSResponder'
      alias ds-cleanup='find . -type f -name "*.DS_Store" -ls -delete'
+     alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
+     alias preview="open -a Preview $1"
      ;;
    Linux)
      ;;
