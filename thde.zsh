@@ -35,7 +35,7 @@ alias rs='rsync -ahvP --stats'
 ## OS specific ##
 case "$(uname -s)" in
    Darwin) # Mac OS X
-     alias upgrade='brew update && brew upgrade && brew cleanup && brew cask cleanup'
+     alias upgrade='brew upgrade && brew cleanup && brew cask cleanup'
      alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
      alias flushdns='dscacheutil -flushcache && killall -HUP mDNSResponder'
      alias ds-cleanup='find . -type f -name "*.DS_Store" -ls -delete'
