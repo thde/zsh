@@ -30,6 +30,7 @@ alias cl='wc -l'
 alias share="curl -F upload=@- https://w1r3.net"
 alias outgoingip='dig myip.opendns.com @resolver1.opendns.com +short'
 alias rs='rsync -ahvP --stats'
+alias dc='docker-compose'
 ##
 
 ## OS specific ##
