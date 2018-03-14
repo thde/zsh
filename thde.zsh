@@ -31,6 +31,7 @@ alias share="curl -F upload=@- https://w1r3.net"
 alias outgoingip='dig myip.opendns.com @resolver1.opendns.com +short'
 alias rs='rsync -ahvP --stats'
 alias dc='docker-compose'
+aliad git-cleanup='git branch | grep -v "master" | xargs git branch -D '
 ##
 
 ## OS specific ##
@@ -56,12 +57,6 @@ esac
 ## Functions ##
 hostfromdomain () {
   dig "$1" +short | xargs dig +short -x
-}
-
-gccrun () {
-  gcc "$1" -o ./gccrun
-  ./gccrun
-  rm -f ./gccrun
 }
 
 extract () {
