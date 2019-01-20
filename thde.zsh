@@ -1,17 +1,4 @@
-## Exports ##
-export PYTHONIOENCODING='UTF-8';
-
 ## Modified commands ##
-if grep --color "a" <<<"a" &>/dev/null; then
-    alias grep='grep --color=auto'
-fi
-if egrep --color "a" <<<"a" &>/dev/null; then
-    alias egrep='egrep --color=auto'
-fi
-if fgrep --color "a" <<<"a" &>/dev/null; then
-    alias fgrep='fgrep --color=auto'
-fi
-alias more='less'
 alias df='df -h'
 alias du='du -c -h'
 alias mkdir='mkdir -v'
@@ -21,29 +8,16 @@ alias wget='wget -c'
 ##
 
 ## New commands ##
-alias cc='cd && clear'
-alias ..='cd ..'
-alias cd..='cd ..'
-alias header='curl -I'
 alias mountt='mount |column -t'
-alias cl='wc -l'
-alias share="curl -F upload=@- https://w1r3.net"
 alias outgoingip='dig myip.opendns.com @resolver1.opendns.com +short'
 alias rs='rsync -ahvP --stats'
 alias dc='docker-compose'
-alias git-cleanup='git branch | grep -v "master" | xargs git branch -D '
 alias docker-cleanup='docker system prune --volumes -f'
 ##
 
 ## OS specific ##
 case "$(uname -s)" in
    Darwin) # Mac OS X
-     alias upgrade='brew upgrade && brew cleanup && brew cask cleanup'
-     alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-     alias flushdns='dscacheutil -flushcache && killall -HUP mDNSResponder'
-     alias ds-cleanup='find . -type f -name "*.DS_Store" -ls -delete'
-     alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py' # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
-     alias preview="open -a Preview $1"
      ;;
    Linux)
      ;;
@@ -56,10 +30,6 @@ esac
 ##
 
 ## Functions ##
-hostfromdomain () {
-  dig "$1" +short | xargs dig +short -x
-}
-
 extract () {
   if [ -f $1 ] ; then
       case $1 in
@@ -79,9 +49,5 @@ extract () {
   else
       echo "'$1' is not a valid file!"
   fi
-}
-
-weather () {
-    curl -s "http://wttr.in/${1}"
 }
 ##
